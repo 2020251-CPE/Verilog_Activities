@@ -12,16 +12,19 @@ module Lab1Experiment;
         #1 $display("NOT Gate");
         #1 $monitor("x=%b,n=%b",i1,not1);
         #1 i1=1;
+
         #1 i1=0; i2=0;
         #1 $display("AND Gate");
         #1 $monitor("x=%b,y=%b,n=%b",i1,i2,and1);
         #1 i1=0; i2=1;
         #1 i1=1; i2=0;
         #1 i1=1; i2=1;
+
+        #1 i1=0; i2=0;
         #1 $display("OR Gate");
         #1 $monitor("x=%b,y=%b,n=%b",i1,i2,or1);
-        #1 i1=1; i2=0;
         #1 i1=0; i2=1;
-        #1 i1=0; i2=0;
+        #1 i1=1; i2=0;
+        #1 i1=1; i2=1;
     end
 endmodule
