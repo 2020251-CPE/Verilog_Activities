@@ -3,7 +3,6 @@ module part1minterm(
     output i
 );
     // reference: !A!B + !BC + B!C
-
     wire notA,notB,notC,BnotC,notBC,notAnotB;
 
     not(notA,a);
@@ -16,12 +15,12 @@ module part1minterm(
 
     or(i,notAnotB,notBC,BnotC);
 endmodule
+
 module part1Maxterm(
     input a,b,c,
     output i
 );
     // reference: (!A+B+C)(!B+!C)
-    
     wire notA,notB,notC,notABC,notBnotC;
 
     not(notA,a);
@@ -33,12 +32,12 @@ module part1Maxterm(
 
     and(i,notABC,notBnotC);
 endmodule
+
 module part5Minterm(
     input a,b,c,d,
     output i
 );
     // reference: !A!C!B+!ADB+!AD!C+A!BCD+AB!C
-
     wire notA,notB,notC,
         notAnotCnotB,notADB,
         notADnotC,notABCD,ABnotC;
@@ -55,12 +54,12 @@ module part5Minterm(
 
     or(i,notAnotCnotB,notADB,notADnotC,AnotBCD,ABnotC);
 endmodule
+
 module part5Maxterm(
     input a,b,c,d,
     output i
 );
     // reference: (!A+!B+!C)(!A+B+C)(A+!B+D)(A+B+!C)(!C+D)
-
     wire notA,notB,notC,
         notAnotBnotC,notABC,AnotBD,
         ABnotC,notCD;
@@ -98,7 +97,6 @@ module Lab3TestBench;
         #1 a=1;b=0;c=1;
         #1 a=1;b=1;c=0;
         #1 a=1;b=1;c=1;
-
 
         #1 a=0;b=0;c=0;
         $display("\npart1 maxterm: (!A+B+C)(!B+!C)");
