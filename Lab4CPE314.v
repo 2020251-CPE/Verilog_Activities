@@ -40,6 +40,12 @@ module Lab4TB;
     part3 p3(a,b,c,g);
     part5 p5(a,b,c,d,h);
 
+    initial
+        begin
+            $dumpfile("Lab4CPE314.vcd");
+	        $dumpvars(-1, p1,p3,p5);
+	        $monitor("%b",  f,g,h);
+        end
     initial begin
         #1 a=0; b=0;
         #1 $display("part1");

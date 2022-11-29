@@ -58,6 +58,15 @@ module Lab5TB;
     halfSubtract HFSUB(a,b,D,bOut);
     fullSubtract FFSUB(a,b,bIn,D1,bOut1);
 
+    initial
+        begin
+            $dumpfile("Lab5CPE314.vcd");
+	        $dumpvars(-1, HFADD,FLADD,HFSUB,FFSUB);
+	        $monitor("%b",  sum,carry,
+                            sum1,c_out,
+                            D,bOut,
+                            D1,bOut1);
+        end
     initial begin
         #1 a=0; b=0;
         #1 $display("Simulating Half Adder");

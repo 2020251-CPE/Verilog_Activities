@@ -86,6 +86,12 @@ module Lab3TestBench;
     part5Minterm P5Min(a,b,c,d,fiveMinterm);
     part5Maxterm P5Max(a,b,c,d,fiveMaxterm);
 
+    initial
+        begin
+            $dumpfile("Lab3CPE314.vcd");
+	        $dumpvars(-1, P1Min,P1Max,P5Min,P5Max);
+	        $monitor("%b",  oneMinterm,oneMaxterm,fiveMinterm,fiveMaxterm);
+        end
     initial begin
         #1 a=0;b=0;c=0;
         $display("part1 minterm: !A!B + !BC + B!C");

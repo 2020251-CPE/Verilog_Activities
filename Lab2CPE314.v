@@ -61,6 +61,15 @@ module Experiment2;
     twoA A2(a,b,twoAresult);
     twoB B2(a,b,twoBresult);
 
+    initial
+        begin
+            $dumpfile("Lab2CPE314.vcd");
+	        $dumpvars(-1, A1,B1,A2,B2);
+	        $monitor("%b",  NAND1,negativeOR1,NOR1,negativeAND1,
+                            oneBresult,
+                            twoAresult,
+                            twoBresult);
+        end
     initial begin
         #1 $display("DeMorgan's Law");
         #1 $display("~((a)(b))");
